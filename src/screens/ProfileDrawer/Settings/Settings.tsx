@@ -10,7 +10,7 @@ const Settings = ({ navigation }: HomeNavigationProps<"Settings">) => {
       <DrawerContent>
         <Box backgroundColor="background">
           <DrawerHeader
-            left={{ icon: "menu", onPress: () => navigation.openDrawer() }}
+            left={{icon: "menu", onPress: () => navigation.openDrawer(), color: "background"}}
             right={{ icon: "share", onPress: () => true }}
             title="Notifications"
           />

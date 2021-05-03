@@ -1,15 +1,14 @@
-import React, { useRef, useCallback, useState } from 'react'
-import { View, Text, StyleSheet, Dimensions, Button, ScrollView } from 'react-native';
-import { Appbar } from 'react-native-paper';
-import Circle from '../../components/Circle';
-import { Box, DrawerContent, DrawerHeader } from "../../components";
-import Donut from "../../components/Donut";
+import React from 'react';
+import { DrawerActions } from "@react-navigation/native";
+import { View, Text, StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { Box, DrawerHeader, DrawerContent } from "../../components";
+import { HomeNavigationProps } from "../../navigation/navigation";
+// import { Box, DrawerContent, DrawerHeader } from "../../components";
 
-const { height, width } = Dimensions.get("window")
+const { height } = Dimensions.get("window")
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }: HomeNavigationProps<"HomeScreen">) => {
     const _goBack = () => console.log('Went back');
-    const _handleSearch = () => console.log('Searching');
     const _handleMore = () => console.log('Shown more');
 
 
@@ -17,41 +16,28 @@ const HomeScreen = () => {
     //     setInterval(() => setDonutValues(), 1000)
     //   }
     return (
-        <View style={styles.container}>
-            <Appbar.Header style={{ backgroundColor: "#00162B", height: height * 0.03 }}>
-            <Appbar.Action icon="menu"  style={{ paddingBottom: 15, justifyContent: "center" }} />
-                <Appbar.Content title="Whistle" subtitle="Trading signals" style={{ paddingBottom: 15, justifyContent: "center" }} />
-                {/* <Appbar.Action icon="magnify" onPress={_handleSearch} style={{ paddingBottom: 15, justifyContent: "center" }} /> */}
-                <Appbar.Action icon="logout" onPress={_handleMore} style={{ paddingBottom: 15, justifyContent: "center" }} />
-            </Appbar.Header>
+        <DrawerContent>
+        <Box backgroundColor="background3">
+          <DrawerHeader
+            left={{icon: "menu", onPress: () => navigation.dispatch(DrawerActions.openDrawer()), color: "background"}}
+            right={{ icon: "share", onPress: () => true }}
+            title="Whistle"
+          />
+        </Box>
 
             <ScrollView>
                 <View style={styles.root}>
                     <Text style={styles.header1}>Welcome to Whistle</Text>
                     <Text style={styles.header2}>Forex signal management system</Text>
                 </View>
-                <View style={{ borderRadius: 10}}>  
-                    <Donut />
-                </View>
                 {/* # To do List
                 # Add details about company in home  */}
                 <View style={styles.root}>
 
-                    <Circle
-                        activeColor="#00162B"
-                        passiveColor="darkgrey"
-                        baseColor="white"
-                        width={50}
-                        done={80}
-                        radius={100}
-                        duration={10000}
-                    >
-                        <Text style={styles.header2}>80%</Text>
-                    </Circle>
                     <Text style={styles.header3}> Last week accuracy result</Text>
                 </View>
             </ScrollView>
-        </View>
+        </DrawerContent>
 
     )
 }

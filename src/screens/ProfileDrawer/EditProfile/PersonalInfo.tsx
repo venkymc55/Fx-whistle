@@ -4,7 +4,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Box, Text } from "../../../components";
 import TextInput from "../../../components/TextInput";
 
-import CheckboxGroup from "./CheckboxGroup";
+import CheckboxGroup from "./CheckBoxGroup";
 
 const genders = [
   { value: "male", label: "Male" },

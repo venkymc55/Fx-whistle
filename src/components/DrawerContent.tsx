@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width,
-    height: (width * 750) / 1125,
+    height: (width * 900) / 1125,
   },
 });
 interface ContentFooterProps {
@@ -30,13 +30,13 @@ interface ContentFooterProps {
     return (
       <>
         {children}
-        <Svg
+        {/* <Svg
           width={width}
-          height={height}
+          height={height/2}
           viewBox={[0, 0, viewBox.width, viewBox.height].join(" ")}
         >
           <Path fill={theme.colors.background} d={d} />
-        </Svg>
+        </Svg> */}
       </>
     );
   };

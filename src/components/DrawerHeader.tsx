@@ -4,11 +4,13 @@ import { View } from "react-native";
 
 import { Box, Text } from "./Theme";
 import RoundedIconButton from "./RoundedIconButton";
+import { white } from "react-native-paper/lib/typescript/styles/colors";
 
 interface HeaderProps {
     left: {
       icon: string;
       onPress: () => void;
+      color: "background"
     };
     title: string;
     right?: {
@@ -18,9 +20,9 @@ interface HeaderProps {
     dark: boolean;
   }
 
-  const DrawerHeader = ({ title, left, right, dark }: HeaderProps) => {
+  const DrawerHeader = ({ title, left, right }: HeaderProps) => {
     const insets = useSafeAreaInsets();
-    const color = dark ? "background" : "secondary";
+    const color = "background"
     return (
       <Box
         flexDirection="row"
@@ -28,6 +30,7 @@ interface HeaderProps {
         alignItems="center"
         justifyContent="space-between"
         paddingHorizontal="m"
+        backgroundColor="background3"
       >
         <RoundedIconButton
           size={44}
@@ -35,9 +38,9 @@ interface HeaderProps {
           name={left.icon}
           onPress={left.onPress}
           align={"center"}
-          {...{ color }}
+          {...{color}}
         />
-        <Text variant="header" {...{ color }}>
+        <Text variant="header" {...{color}}>
           {title.toUpperCase()}
         </Text>
         {right ? (

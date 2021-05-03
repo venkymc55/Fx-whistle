@@ -1,0 +1,107 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Python\Python37\Scripts\;C:\Python\Python37\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Venky\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Program Files (x86)\Universal Extractor;C:\Program Files (x86)\Universal Extractor\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Users\Venky\workspace\libs;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\nodejs\;C:\Program Files (x86)\Brackets\command;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin;C:\Users\Venky\AppData\Local\Microsoft\WindowsApps;C:\Users\Venky\AppData\Local\atom\bin;C:\Program Files (x86)\Sophos\Sophos SSL VPN Client\bin;E:\geetha\Flutter Challenge\IntelliJ IDEA Community Edition 2018.3.5\bin;C:\Users\Venky\Downloads\flutter\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.1\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files\heroku\bin;C:\Users\Venky\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Venky\AppData\Roaming\npm;C:\Users\Venky\AppData\Local\Android\Sdk;C:\Program Files (x86)\yarn\bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.16.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\yarn\lib\cli.js:141289:19)
+      at Object.onceWrapper (events.js:416:28)
+      at ClientRequest.emit (events.js:310:20)
+      at TLSSocket.emitRequestTimeout (_http_client.js:709:9)
+      at Object.onceWrapper (events.js:416:28)
+      at TLSSocket.emit (events.js:322:22)
+      at TLSSocket.Socket._onTimeout (net.js:479:8)
+      at listOnTimeout (internal/timers.js:549:17)
+      at processTimers (internal/timers.js:492:7)
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "lint": "eslint --ext .ts,.tsx . --max-warnings 0 --cache",
+      "eject": "expo eject",
+      "test": "jest --watchAll",
+      "tsc": "tsc",
+      "ci": "yarn lint && yarn tsc"
+    },
+    "jest": {
+      "preset": "jest-expo"
+    },
+    "dependencies": {
+      "@expo/vector-icons": "^12.0.4",
+      "@react-native-community/masked-view": "0.1.10",
+      "@react-navigation/bottom-tabs": "5.11.2",
+      "@react-navigation/drawer": "^5.12.5",
+      "@react-navigation/native": "~5.8.10",
+      "@react-navigation/stack": "~5.12.8",
+      "@shopify/restyle": "^1.4.0",
+      "d3-scale": "^3.2.4",
+      "expo": "~40.0.0",
+      "expo-asset": "~8.2.1",
+      "expo-constants": "~9.3.0",
+      "expo-font": "~8.4.0",
+      "expo-haptics": "~8.4.0",
+      "expo-linking": "~2.0.0",
+      "expo-splash-screen": "~0.8.0",
+      "expo-linear-gradient": "~8.3.0",
+      "expo-status-bar": "~1.0.3",
+      "expo-web-browser": "~8.6.0",
+      "moment": "^2.29.1",
+      "react": "16.13.1",
+      "react-dom": "16.13.1",
+      "react-gridlines": "^1.1.7",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+      "react-native-elements": "^3.3.2",
+      "react-native-gesture-handler": "~1.8.0",
+      "react-native-keyboard-aware-scroll-view": "^0.9.2",
+      "react-native-pager-view": "^5.1.2",
+      "react-native-paper": "^4.7.2",
+      "react-native-percentage-circle": "^1.0.7",
+      "react-native-reanimated": "2.0.0-alpha.6.1",
+      "react-native-safe-area-context": "^3.2.0",
+      "react-native-screens": "~2.15.0",
+      "react-native-sqlite-storage": "^5.0.0",
+      "react-native-svg": "^12.1.0",
+      "react-native-svg-charts": "^5.4.0",
+      "react-native-tab-view": "^3.0.1",
+      "react-native-web": "~0.13.12",
+      "react-navigation": "^4.4.4",
+      "react-navigation-hooks": "^1.1.0",
+      "react-navigation-stack": "^2.10.4",
+      "yup": "^0.29.1"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.9.0",
+      "@types/color": "^3.0.1",
+      "@types/crypto-js": "^3.1.43",
+      "@types/d3-scale": "^3.2.2",
+      "@types/react": "~16.9.35",
+      "@types/yup": "^0.29.3",
+      "@types/react-native": "~0.63.2",
+      "jest-expo": "~40.0.0",
+      "react-native-redash": "^16.0.10",
+      "typescript": "~4.0.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

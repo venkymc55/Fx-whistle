@@ -8,7 +8,7 @@ import { AuthNavigationProps } from "../navigation/navigation";
 
 const { width } = Dimensions.get("window");
 const picture = {
-  src: require("./assets/5.png"),
+  src: require("./../assets/5.png"),
   width: 3383,
   height: 5074,
 };

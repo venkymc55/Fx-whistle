@@ -3,7 +3,7 @@ import React from "react";
 import { Dimensions } from "react-native";
 
 import { Box, DrawerHeader, Text, useTheme } from "../../../components";
-import { HomeNavigationProps } from "../../../Navigation/Navigation";
+import { HomeNavigationProps } from "../../../navigation/navigation";
 
 import PersonalInfo from "./PersonalInfo";
 
@@ -32,6 +32,7 @@ const EditProfile = ({ navigation }: HomeNavigationProps<"EditProfile">) => {
             left={{
               icon: "menu",
               onPress: () => navigation.dispatch(DrawerActions.openDrawer()),
+              color: "background"
             }}
             dark
           />

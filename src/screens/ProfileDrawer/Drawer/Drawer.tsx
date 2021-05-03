@@ -56,13 +56,14 @@ const items: DrawerItemProps[] = [
             right={0}
             bottom={0}
             borderBottomRightRadius="xl"
-            backgroundColor="secondary"
+            backgroundColor="background3"
           >
             <DrawerHeader
               title="Menu"
               left={{
                 icon: "x",
                 onPress: () => navigation.dispatch(DrawerActions.closeDrawer()),
+                color: "background"
               }}
               right={{
                 icon: "shopping-bag",
@@ -97,10 +98,10 @@ const items: DrawerItemProps[] = [
             />
             <Box marginVertical="m">
               <Text variant="title1" textAlign="center">
-                Mike Peter
+                Venky
               </Text>
               <Text variant="body" textAlign="center">
-                mike@flexinstudio.com
+                venky@gmail.com
               </Text>
             </Box>
             {items.map((item) => (
@@ -109,19 +110,11 @@ const items: DrawerItemProps[] = [
           </Box>
         </Box>
         <Box
-          backgroundColor="background"
+          backgroundColor="background3"
           width={DRAWER_WIDTH}
           overflow="hidden"
           height={height * 0.61}
         >
-          <Image
-            source={assets[0]}
-            style={{
-              width: DRAWER_WIDTH,
-              height,
-              borderTopLeftRadius: theme.borderRadii.xl,
-            }}
-          />
         </Box>
       </Box>
     );

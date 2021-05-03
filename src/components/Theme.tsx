@@ -32,6 +32,7 @@ const theme = {
     text: "rgba(12, 13, 52, 0.7)",
     textContrast: palette.white,
     background: palette.white,
+    background3: "#00162B",
     background2: "#F6F6F6",
     graph1: palette.orange,
     graph2: palette.yellow,
