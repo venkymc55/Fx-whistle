@@ -7,12 +7,13 @@ import { MainNavigationProps } from "../../navigation/navigation";
 import CountDown from 'react-native-countdown-component';
 import moment from 'moment';
 import { Box } from "../../components";
+import * as Progress from 'react-native-progress';
 
 const { width: wWidth } = Dimensions.get("window");
 const width = wWidth * 0.75;
-const height = width * (425 / 294);
-const borderRadius = 24;
-const snapPoints = [-wWidth, 0, wWidth];
+const height = width * 0.40;
+// const borderRadius = 24;
+// const snapPoints = [-wWidth, 0, wWidth];
 
 interface Item {
   contest: string;
@@ -32,18 +33,17 @@ const ContestCard = (item: Item) => {
       <View style={styles.cartCard}>
         <View
           style={{
-            height: 100,
+            height: height,
             marginLeft: 10,
             paddingVertical: 20,
             flex: 1,
+            marginTop:height/2.5
           }}>
-          <Text style={{marginTop:18, fontSize: 18, color: 'white'}}>
+          <Text style={{ fontSize: 18, color: 'white'}}>
           {item.pair}
           </Text>
-  
         </View>
-        <View style={{marginRight: 30, alignItems: 'center'}} >
-        <Text style={{fontSize: 15, color: 'white', marginRight: 3, marginTop:10}}>
+        <View style={{marginRight: width/15, justifyContent:'center', marginTop: width/30}} >
           <CountDown
           until={item.duration}
           digitStyle={{backgroundColor: '#FFF'}}
@@ -51,14 +51,13 @@ const ContestCard = (item: Item) => {
           separatorStyle={{color: '#FFF', marginBottom: 15}}
           timeToShow={['H', 'M', 'S']}
           //on Press call
-          size={10}
-          showSeparator
-        /></Text>
+          size={width/28}
+          showSeparator/>
         </View>
         <View style={{marginRight: 20, alignItems: 'center'}}>
           
           <View style={styles.actionBtn}>
-          <Text style={{fontWeight: 'bold', fontSize: 13, color: '#000', marginTop: 5}} onPress={() => navigation.navigate("Graph")}>
+          <Text style={{fontWeight: 'bold', fontSize: 13, color: '#000', marginTop: width/50}} onPress={() => navigation.navigate("Graph")}>
           {item.contest_fees}
           </Text>
           </View>
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   cartCard: {
-    height: 100,
+    height: height,
     elevation: 15,
     borderRadius: 10,
     backgroundColor: "#00162B",
@@ -86,8 +85,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   actionBtn: {
-    width: 80,
-    height: 30,
+    width: width /3.5,
+    height: width/9,
     backgroundColor: "#fcffa4",
     borderRadius: 30,
     paddingHorizontal: 5,

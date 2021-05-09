@@ -6,12 +6,13 @@ import DrawerHeader from '../DrawerHeader';
 import { graphs } from "./Model";
 const { width } = Dimensions.get("window");
 
-const SELECTION_WIDTH = width - 32;
+const SELECTION_WIDTH = width;
 const BUTTON_WIDTH = (width - 32) / graphs.length;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    height: SELECTION_WIDTH,
   },
   backgroundSelection: {
     backgroundColor: "#f3f3f3",
@@ -38,15 +39,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const Graph = () => {
+const Chart = () => {
   return (
     <Box style={styles.container}>
 
       <Box>
         <DrawerHeader
-          left={{ icon: "menu", onPress: () => true, color: "background" }}
-          right={{ icon: "bell", onPress: () => true }}
-          title="Contest Details"
+          left={{ icon: "", onPress: () => true, color: "background" }}
+          right={{ icon: "", onPress: () => true }}
+          title="Binary Chart"
         />
       </Box>
       <Box style={styles.selection}>
@@ -73,7 +74,7 @@ const Graph = () => {
           yAxisInterval={1} // optional, defaults to 1
           chartConfig={{
             backgroundColor: "#e26a00",
-            backgroundGradientFrom: "#white",
+            backgroundGradientFrom: "white",
             backgroundGradientTo: "white",
             decimalPlaces: 2, // optional, defaults to 2dp
             color: (opacity = 1) => `green`,
@@ -97,4 +98,4 @@ const Graph = () => {
   );
 };
 
-export default Graph;
+export default Chart;

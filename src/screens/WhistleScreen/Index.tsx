@@ -14,7 +14,7 @@ const WhistleScreen = ({ navigation }: HomeNavigationProps<"HomeScreen">) => {
         <Box backgroundColor="background3">
           <DrawerHeader
             left={{icon: "menu", onPress: () => navigation.dispatch(DrawerActions.openDrawer()), color: "background"}}
-            right={{ icon: "share", onPress: () => true }}
+            right={{ icon: "bell", onPress: () => true }}
             title="Signal - Whistle"
           />
         </Box>

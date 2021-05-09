@@ -11,9 +11,9 @@ import Animated, {
 import { Box, useTheme } from "../../components";
 import Chart from "../../components/LineChart/Chart";
 
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 const aspectRatio = width / 375;
-const height = 682 * aspectRatio;
+// const height = 682 * height;
 const minHeight = 228 * aspectRatio;
 const snapPoints = [-(height - minHeight), 0];
 
@@ -33,7 +33,6 @@ const ChartContainer = () => {
           style={[
             {
               position: "absolute",
-              top: 0,
               left: 0,
               right: 0,
               height,

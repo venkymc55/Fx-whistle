@@ -4,20 +4,20 @@ import {
     StyleSheet,
     TextInputProps as RNTextInputProps,
   } from "react-native";
-import { Feather as Icon } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 import { Box, useTheme } from "./Theme";
 import RoundedIcon from "./RoundedIcon";
 import { Text } from "./Theme";
 
 interface TextInputProps extends RNTextInputProps {
-    iconName: string;
+  icon: string;
     touched?: boolean;
     error?: string;
   }
 
 const TextInput = forwardRef<RNTextInput, TextInputProps>(
-  ({ iconName, touched, error, ...props }, ref) => {
+  ({ icon, touched, error, ...props }, ref) => {
       const theme = useTheme();
       const SIZE = theme.borderRadii.m * 2.5;
       const validationColor = error ? "danger" : "primary";
@@ -29,18 +29,18 @@ const TextInput = forwardRef<RNTextInput, TextInputProps>(
           alignItems="center"
           borderRadius="s"
           borderWidth={StyleSheet.hairlineWidth}
-          borderColor={color}
+          borderColor='background'
           padding="s"
         >
           <Box padding="s">
             <Text {...{ color }}>
-              {/* <Icon name={iconName} size={16} /> */}
+              <Feather name={icon} size={16} />
             </Text>
           </Box>
           <Box flex={1}>
             <RNTextInput
               underlineColorAndroid="transparent"
-              placeholderTextColor={theme.colors[color]}
+              placeholderTextColor="white"
               {...{ ref }}
               {...props}
             />

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Chart = () => {
+const Graph = () => {
   return (
     <Box style={styles.container}>
 
@@ -97,4 +97,4 @@ const Chart = () => {
   );
 };
 
-export default Chart;
+export default Graph;

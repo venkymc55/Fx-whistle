@@ -11,8 +11,9 @@ import * as Progress from 'react-native-progress';
 import { Box } from "../../components";
 
 const { width: wWidth } = Dimensions.get("window");
-const width = wWidth * 0.75;
-const height = width * (425 / 294);
+const card_width = wWidth * 0.90;
+const bar_width = wWidth * 0.75;
+const height = wWidth * (150 / 300);
 
 interface Item {
   contest: string;
@@ -33,18 +34,16 @@ const CurrentContestCard = (item: Item) => {
       <View style={styles.cartCard}>
         <View
           style={{
-            height: 250,
+            height: height,
             marginLeft: 20,
             paddingVertical: 20,
             flex: 1,
           }}>
-             <Progress.Bar progress={0.8} width={300} color={'green'}/>
+             <Progress.Bar progress={0.8} width={bar_width} color={'green'}/>
           <Text style={{ marginTop: 20, fontWeight: 'bold', fontSize: 25, color: 'white' }}>
             {item.pair}
           </Text>
-          <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', marginTop: 100 }}>
-            <MaterialIcons name="access-time" size={25} color="white"/>  30 Mins
-          </Text>
+            {/* <MaterialIcons name="access-time" size={25} color="white"/> */}
         </View>
         <View style={{ marginRight: 30, alignItems: 'center' }} >
           <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white', marginRight: 20, marginTop: 10, alignItems: 'center' }}>
@@ -66,7 +65,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   cartCard: {
-    height: 250,
+    height: height,
+    width: card_width,
     elevation: 15,
     borderRadius: 10,
     backgroundColor: "#00162B",

@@ -6,11 +6,11 @@ import { BorderlessButton } from "react-native-gesture-handler";
 import { CommonActions } from "@react-navigation/native";
 
 import { Container, Button, Text, Box } from "../components";
-import { AuthNavigationProps } from "../components/Navigation";
-import TextInput from "../components/Form/TextInput";
-import Checkbox from "../components/Form/Checkbox";
+import { AuthNavigationProps } from "../navigation/navigation";
+import TextInput from "../components/TextInput";
+import Checkbox from "../components/Checkbox";
 
-import Footer from "./components/Footer";
+import Footer from "./Footer";
 
 
 const LoginSchema = Yup.object().shape({

@@ -28,19 +28,17 @@ const CurrentTopBar = ({ navigation }: HomeNavigationProps<"HomeScreen">) => {
     );
     return (
         <DrawerContent>
+          
         <Box backgroundColor="background">
-            <ScrollView
-            showsVerticalScrollIndicator={false}
-          >
+            
                 <FlatList
                     data={DATA}
                     renderItem={renderItem}
                     // keyExtractor={(item) => item.id}
                 />
-            </ScrollView>
 
             </Box>
-        <Box flex={1} marginVertical={'s'}>
+          <Box flex={1} marginVertical={'s'}>
           <ChartContainer />
           </Box>
         </DrawerContent>

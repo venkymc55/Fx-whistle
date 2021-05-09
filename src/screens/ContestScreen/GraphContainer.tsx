@@ -39,8 +39,6 @@ const GraphContainer = ({ children }: GraphProps ) => {
               right: 0,
               height,
               backgroundColor: "white",
-              borderBottomLeftRadius: theme.borderRadii.xl,
-              borderBottomRightRadius: theme.borderRadii.xl,
             },
             style,
           ]}
@@ -48,25 +46,17 @@ const GraphContainer = ({ children }: GraphProps ) => {
           <Graph />
           <View
             style={{
+              flex: 1,
               position: "absolute",
               bottom: 0,
               left: 0,
               right: 0,
-              height: theme.borderRadii.xl,
+              // height: theme.borderRadii.xl,
               justifyContent: "flex-end",
               alignItems: "center",
             }}
           >
             <ContestJoiningCard />
-            <View
-              style={{
-                height: 5 * aspectRatio,
-                backgroundColor: theme.colors.background2,
-                width: 60 * aspectRatio,
-                borderRadius: 2.5 * aspectRatio,
-                marginBottom: 200,
-              }}
-            />
           </View>
         </Animated.View>
     </Box>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Svg, { Path } from "react-native-svg";
-
+import { DrawerActions } from "@react-navigation/native";
 import { Box, DrawerHeader } from "../../components";
 import { MainNavigationProps } from "../../navigation/navigation";
 import { aspectRatio, useTheme } from "../../components/Theme";
@@ -22,34 +22,21 @@ const LineChart = ({ navigation }: MainNavigationProps<"Graph">) => {
       <GraphContainer>
         <Box>
             <DrawerHeader
-              left={{ icon: "arrow-left", onPress: () => navigation.goBack(), color: "background" }}
+              left={{ icon: "arrow-left", onPress: () =>  navigation.dispatch(DrawerActions.openDrawer()), color: "background" }}
               title="Line Chart"
             />
         </Box>
-        <Box flex={1}>
+        <Box flex={1} backgroundColor={"background3"}>
           <ScrollView
             style={{
               borderBottomLeftRadius: theme.borderRadii.xl,
               borderBottomRightRadius: theme.borderRadii.xl,
             }}
-            contentContainerStyle={{ paddingVertical: 50 * aspectRatio }}
+            contentContainerStyle={{ paddingVertical: 20 * aspectRatio }}
             showsVerticalScrollIndicator={false}
           >
             <Graph />
           </ScrollView>
-          <Box
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              height,
-            }}
-          >
-            <Svg style={StyleSheet.absoluteFill} viewBox="0 0 375 100">
-              <Path d={d} fill={theme.colors.primary} />
-            </Svg>
-          </Box>
         </Box>
       </GraphContainer>
     );
